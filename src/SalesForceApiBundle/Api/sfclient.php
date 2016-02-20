@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: oezguer
- * Date: 12.02.16
- * Time: 07:58
- */
 
 namespace Mi\SalesforceApiBundle\Api;
-
 
 class SFClient
 {
@@ -32,7 +25,6 @@ class SFClient
 
     private function getConnection()
     {
-        // prüft mit getSessionId ob die Verbindung besteht. Suboptimal?
         if (is_null($this->mySforceConnection->getSessionId())) {
             $this->mySforceConnection->createConnection($this->path);
             $this->mySforceConnection->login($this->username, $this->password . $this->token);
@@ -48,5 +40,4 @@ class SFClient
 
         return $response;
     }
-
 }

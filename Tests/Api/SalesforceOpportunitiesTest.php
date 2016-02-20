@@ -28,5 +28,4 @@ class SalesforceOpportunitiesTest extends \PHPUnit_Framework_TestCase
         $this->salesforceConnection->shouldReceive('salesforceConnection')->once()->andReturn(['name' => 'Deutsche Post DHL']);
         $this->opportunityTest->getSalesforceObject('1234');
     }
-
 }

@@ -1,10 +1,7 @@
 <?php
 
-
 namespace Mi\SalesforceApiBundle\Api;
 
-
-use Symfony\Component\HttpFoundation\Response;
 use Mi\SalesforceApiBundle\Model;
 
 class SalesforceOpportunities
@@ -22,7 +19,6 @@ class SalesforceOpportunities
                   FROM Opportunity WHERE Angebots_Nr__c = '$opportunitieId'";
 
         return $this->getSalesforceObject($query);
-
     }
 
     public function getSalesforceObject($query)

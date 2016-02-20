@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: oezguer
- * Date: 15.02.16
- * Time: 15:00
- */
 
 namespace Mi\SalesforceApiBundle\Model;
-
 
 class SforceOpportunity
 {
@@ -28,63 +21,6 @@ class SforceOpportunity
     private $duedate = '';
     private $company = '';
     private $issuetype = '';
-
-    /**
-     * @return mixed
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getStorypoints()
-    {
-        return $this->storypoints;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getProjecttitle()
-    {
-        return $this->projecttitle;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getReporter()
-    {
-        return $this->reporter;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDuedate()
-    {
-        return $this->duedate;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCompany()
-    {
-        return $this->company;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getIssuetype()
-    {
-        return $this->issuetype;
-    }
-
 
     /**
      * @return mixed
