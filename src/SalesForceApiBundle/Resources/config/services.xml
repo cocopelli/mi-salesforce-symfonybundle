@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="salesforce_client" class="Mi\SalesforceApiBundle\Api\SFClient">
+            <argument key="USERNAME">%salesforce_api.username%</argument>
+            <argument key="PASSWORD">%salesforce_api.password%</argument>
+            <argument key="SECURITY_TOKEN">%salesforce_api.token%</argument>
+            <argument key="WSDL_PATH">%salesforce_api.path%</argument>
+            <argument type="service" id="salesforce_enterprise_client"/>
+        </service>
+
+        <service id="salesforce_enterprise_client" class="SforceEnterpriseClient"/>
+
+        <service id="salesforce_opportunities" class="Mi\SalesforceApiBundle\Api\SalesforceOpportunities" public="true">
+            <argument type="service" id="salesforce_client"/>
+        </service>
+    </services>
+</container>

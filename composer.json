@@ -1,0 +1,31 @@
+{
+  "name": "mi/mi-salesforce-symfony2bundle",
+  "description": "Symfony2 Bundle for salesforce connection",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Özgür Öztas",
+      "email": "oezguer.oeztas@movingimage.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.30",
+    "symfony/framework-bundle": "~2.8.0",
+    "developerforce/Force.com-Toolkit-for-PHP": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.8.16",
+    "mockery/mockery": "~0.9.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Mi\\SalesforceApiBundle\\": "src/SalesForceApiBundle"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.2"
+    }
+  }
+}
