@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: cocopelli
- * Date: 10.02.16
- * Time: 19:48
- */
 
 namespace Mi\SalesforceApiBundle\DependencyInjection;
-
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

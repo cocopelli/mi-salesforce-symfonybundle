@@ -2,7 +2,7 @@
 
 namespace Mi\SalesforceApiBundle\Api;
 
-class SFClient
+class sfclient
 {
     private $username;
     private $password;

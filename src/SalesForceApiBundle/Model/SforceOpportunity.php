@@ -23,6 +23,62 @@ class SforceOpportunity
     private $issuetype = '';
 
     /**
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStorypoints()
+    {
+        return $this->storypoints;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProjecttitle()
+    {
+        return $this->projecttitle;
+    }
+
+    /**
+     * @return string
+     */
+    public function getReporter()
+    {
+        return $this->reporter;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDuedate()
+    {
+        return $this->duedate;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCompany()
+    {
+        return $this->company;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIssuetype()
+    {
+        return $this->issuetype;
+    }
+
+    /**
      * @return mixed
      */
     public function getTitle()

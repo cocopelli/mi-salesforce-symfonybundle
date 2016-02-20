@@ -6,6 +6,9 @@ use Mi\SalesforceApiBundle\Model;
 
 class SalesforceOpportunities
 {
+    /**
+     * @var SFClient
+     */
     private $salesforceConnection;
 
     public function __construct($connectionHelper)
@@ -15,10 +18,14 @@ class SalesforceOpportunities
 
     public function getOpportunities($opportunitieId)
     {
-        $query = "SELECT Name, Angebots_Nr__c, Produkt_dropdown__c, StageName, Umsatz2016__c, Ma_nahme_2015__c, Ma_nahme_2016__c
+        if (preg_match("/^[0-9]{1,10}$/", $opportunitieId)) {
+            $query = "SELECT Name, Angebots_Nr__c, Produkt_dropdown__c, StageName, Umsatz2016__c, Ma_nahme_2015__c, Ma_nahme_2016__c
                   FROM Opportunity WHERE Angebots_Nr__c = '$opportunitieId'";
 
-        return $this->getSalesforceObject($query);
+            return $this->getSalesforceObject($query);
+        } else {
+            throw new InvalidArgumentException('Ticket-ID validation fail');
+        }
     }
 
     public function getSalesforceObject($query)

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: cocopelli
- * Date: 10.02.16
- * Time: 19:37
- */
 
 namespace Mi\SalesforceApiBundle\DependencyInjection;
 

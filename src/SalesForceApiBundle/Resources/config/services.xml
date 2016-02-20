@@ -3,7 +3,7 @@
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
-        <service id="salesforce_client" class="Mi\SalesforceApiBundle\Api\SFClient">
+        <service id="salesforce_client" class="Mi\SalesforceApiBundle\Api\sfclient">
             <argument key="USERNAME">%salesforce_api.username%</argument>
             <argument key="PASSWORD">%salesforce_api.password%</argument>
             <argument key="SECURITY_TOKEN">%salesforce_api.token%</argument>
