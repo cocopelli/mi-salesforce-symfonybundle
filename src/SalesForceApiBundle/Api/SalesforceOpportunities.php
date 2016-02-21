@@ -24,7 +24,7 @@ class SalesforceOpportunities
 
             return $this->getSalesforceObject($query);
         } else {
-            throw new InvalidArgumentException('Ticket-ID validation fail');
+            throw new \InvalidArgumentException('Ticket-ID validation fail');
         }
     }
 
