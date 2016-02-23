@@ -7,7 +7,7 @@ use Mi\SalesforceApiBundle\Model;
 class SalesforceOpportunities
 {
     /**
-     * @var SFClient
+     * @var sfclient
      */
     private $salesforceConnection;
 
