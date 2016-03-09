@@ -19,7 +19,7 @@ class SalesforceOpportunities
     public function getOpportunities($opportunitieId)
     {
         if (preg_match("/^[0-9]{1,10}$/", $opportunitieId)) {
-            $query = "SELECT Name, Angebots_Nr__c, Produkt_dropdown__c, StageName, Umsatz2016__c, Ma_nahme_2015__c, Ma_nahme_2016__c
+            $query = "SELECT Name, Angebots_Nr__c, Produkt_dropdown__c, StageName, Umsatz2016__c, Ma_nahme_2015__c, Ma_nahme_2016__c, CloseDate
                   FROM Opportunity WHERE Angebots_Nr__c = '$opportunitieId'";
 
             return $this->getSalesforceObject($query);
@@ -61,13 +61,23 @@ class SalesforceOpportunities
         }
 
         if (isset($salesforceResponse->records[0]->Ma_nahme_2015__c)) {
-            $salesforceObject->setMeasure2016($salesforceResponse->records[0]->Ma_nahme_2015__c);
+            $salesforceObject->setMeasure2015($salesforceResponse->records[0]->Ma_nahme_2015__c);
         }
 
         if (isset($salesforceResponse->records[0]->Ma_nahme_2016__c)) {
             $salesforceObject->setMeasure2016($salesforceResponse->records[0]->Ma_nahme_2016__c);
         }
 
+        if (isset($salesforceResponse->records[0]->CloseDate)) {
+            $salesforceObject->setClosingDate($this->dateFormat($salesforceResponse->records[0]->CloseDate));
+        }
+
         return $salesforceObject;
+    }
+
+    private function dateFormat($date)
+    {
+        list($y, $m, $d) = explode('-', $date);
+        return $d . '.' . $m . '.' . $y;
     }
 }
