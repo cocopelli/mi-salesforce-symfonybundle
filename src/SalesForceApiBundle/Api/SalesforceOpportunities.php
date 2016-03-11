@@ -19,7 +19,7 @@ class SalesforceOpportunities
     public function getOpportunities($opportunitieId)
     {
         if (preg_match("/^[0-9]{1,10}$/", $opportunitieId)) {
-            $query = "SELECT Name, Angebots_Nr__c, Produkt_dropdown__c, StageName, Umsatz2016__c, Ma_nahme_2015__c, Ma_nahme_2016__c, CloseDate
+            $query = "SELECT Name, Angebots_Nr__c, Produkt_dropdown__c, StageName, Umsatz2016__c, Ma_nahme_2015__c, Ma_nahme_2016__c, CloseDate, Owner.Name
                   FROM Opportunity WHERE Angebots_Nr__c = '$opportunitieId'";
 
             return $this->getSalesforceObject($query);
@@ -56,8 +56,8 @@ class SalesforceOpportunities
             $salesforceObject->setTurnover2016($salesforceResponse->records[0]->Umsatz2016__c);
         }
 
-        if (isset($salesforceResponse->records[0]->Owner)) {
-            $salesforceObject->setOpportunityOwner($salesforceResponse->records[0]->Owner);
+        if (isset($salesforceResponse->records[0]->Owner->Name)) {
+            $salesforceObject->setOpportunityOwner($salesforceResponse->records[0]->Owner->Name);
         }
 
         if (isset($salesforceResponse->records[0]->Ma_nahme_2015__c)) {
